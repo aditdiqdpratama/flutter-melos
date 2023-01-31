@@ -24,7 +24,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Build image
-        run: docker build --platform linux/amd64 -t adityopratama/flutter-melos:2.8.1 .
-      - name: Push image
-        run: docker push adityopratama/flutter-melos:2.8.1
+      - name: Build image & push
+        run: docker build --platform linux/amd64 --push -t adityopratama/flutter-melos:2.8.1 .
